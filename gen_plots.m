@@ -1,5 +1,5 @@
 clear;
-names = ["bpsk", "qpsk", "fsk", "qam16", "qam64"];
+names = ["bpsk", "fsk", "qpsk", "qam64", "qam16"];
 for j=1:length(names)
     name = names(j);
     open_system(name);
@@ -16,7 +16,7 @@ for j=1:length(names)
     title(['Performance of ' + upper(name) + ' modulation vs Channel Noise'])
     hold off
     grid off
-    saveas(gcf, name+'_performance.jpg')
+    saveas(gcf, 'figures/'+name+'_performance.jpg')
     clf()
     close_system(name)
 end
