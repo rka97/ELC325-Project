@@ -32,6 +32,7 @@ The transmitted/received signals are plotted on the Quadrature-Amplitude and pha
 ### BER vs Eb/No performance figure
 The bit error rate is shown as Eb/No varies from -10 dB to 10 dB. Note that it goes to zero at high Eb/No and this cannot be plotted in a semilog graph of finite precision.
 <img src="/figures/bpsk_performance.jpg" alt="BPSK Performance" />
+
 <img src="/figures/bpsk_rc_performance.jpg" alt="BPSK Performance" />
 
 ## QPSK Scheme
