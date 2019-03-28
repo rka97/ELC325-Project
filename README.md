@@ -18,18 +18,22 @@ and
 where fc is some reference frequency, Tb is the periodic time of the base signal and Eb is the signal energy per bit.
 
 ### Reproducing the Model
-The components are the Random Integer block, the BPSK modulation / demodulation blocks, the AWGN channel block, and blocks for error rate calculation and display. Setting the integer block to generate binary numbers, setting the sample time to 0.002 and connecting the blocks as bpsk.slx should lead to the same model.
+The components are the Random Integer block, the BPSK modulation / demodulation blocks, the AWGN channel block, and blocks for error rate calculation and display. Setting the integer block to generate binary numbers, setting the sample time to 0.002 and connecting the blocks as bpsk.slx should lead to the same model. For raised cosines, add a normal raised cosine filter transmit block before the AWGN channel and add a normal raised cosine filter receive block after the AWGN channel: set the filter span in symbols to 6, the number of output samples to 8, the decimation factor to 8, the rolloff factor to 0.2, and add a receive delay of 6 (because of the filtering window) to the error rate calculation block.
 
 ### Scatter Plot at Eb/No=10
 The transmitted/received signals are plotted on the Quadrature-Amplitude and phase plane.
 
 <img src="/figures/bpsk_transmitted.png" alt="BPSK Transmitted Constellation" width="400"/>
 <img src="/figures/bpsk_received.png" alt="BPSK Received Constellation" width="400" />
+<img src="/figures/bpsk_rc_transmitted.png" alt="BPSK Transmitted Constellation" width="400"/>
+<img src="/figures/bpsk_rc_received.png" alt="BPSK Received Constellation" width="400" />
 
 
 ### BER vs Eb/No performance figure
 The bit error rate is shown as Eb/No varies from -10 dB to 10 dB. Note that it goes to zero at high Eb/No and this cannot be plotted in a semilog graph of finite precision.
 <img src="/figures/bpsk_performance.jpg" alt="BPSK Performance" />
+
+<img src="/figures/bpsk_rc_performance.jpg" alt="BPSK Performance" />
 
 ## QPSK Scheme
 ### Description
@@ -42,16 +46,19 @@ and then the transmitted signals can be expressed as four points:
 <img src="https://tex.s2cms.ru/svg/%20%5Cleft%20(%20%5Cpm%20%5Csqrt%7B%5Cfrac%7BE_b%7D%7B2%7D%7D%2C%20%5Cpm%20%5Csqrt%7B%5Cfrac%7BE_b%7D%7B2%7D%7D%20%5Cright%20)" alt=" \left ( \pm \sqrt{\frac{E_b}{2}}, \pm \sqrt{\frac{E_b}{2}} \right )" />
 
 ### Reproducing the Model
-Same as BPSK but use QPSK modulation/demodulation blocks and set the integers to be generated in the range 0-3 (i.e. put M=4 in the Integer block)
+Same as BPSK but use QPSK modulation/demodulation blocks and set the integers to be generated in the range 0-3 (i.e. put M=4 in the Integer block). RC is also the same.
 
 
 ### Scatter Plot at Eb/No=10
 <img src="/figures/qpsk_transmitted.png" alt="QPSK Transmitted Constellation" width="400"/>
 <img src="/figures/qpsk_received.png" alt="QPSK Received Constellation" width="400" />
+<img src="/figures/qpsk_rc_transmitted.png" alt="QPSK Transmitted Constellation" width="400"/>
+<img src="/figures/qpsk_rc_received.png" alt="QPSK Received Constellation" width="400" />
 
 
 ### BER vs Eb/No performance figure
-<img src="/figures/bpsk_performance.jpg" alt="QPSK Performance" />
+<img src="/figures/qpsk_performance.jpg" alt="QPSK Performance" />
+<img src="/figures/qpsk_rc_performance.jpg" alt="QPSK Performance" />
 
 
 ## QAM Schemes
@@ -69,15 +76,23 @@ The QAM16 scheme is shown first, followed by the QAM64.
 
 <img src="/figures/qam16_transmitted.png" alt="QAM16 Transmitted Constellation" width="400"/>
 <img src="/figures/qam16_received.png" alt="QAM16 Received Constellation" width="400" />
+<img src="/figures/qam16_rc_transmitted.png" alt="QAM16 Transmitted Constellation" width="400"/>
+<img src="/figures/qam16_rc_received.png" alt="QAM16 Received Constellation" width="400" />
+
 <img src="/figures/qam64_transmitted.png" alt="QAM64 Transmitted Constellation" width="400"/>
 <img src="/figures/qam64_received.png" alt="QAM64 Received Constellation" width="400" />
+<img src="/figures/qam64_rc_transmitted.png" alt="QAM64 Transmitted Constellation" width="400"/>
+<img src="/figures/qam64_rc_received.png" alt="QAM64 Received Constellation" width="400" />
 
 
 ### BER vs Eb/No performance figure 
 The performance figure for the QAM16 is shown first, followed by the QAM64.
 
 <img src="/figures/qam16_performance.jpg" alt="QAM16 Performance" />
+<img src="/figures/qam16_rc_performance.jpg" alt="QAM16 Performance" />
+
 <img src="/figures/qam64_performance.jpg" alt="QAM64 Performance" />
+<img src="/figures/qam64_rc_performance.jpg" alt="QAM64 Performance" />
 
 ## FSK Scheme
 FSK (Frequency Shift Keying) is a nonlinear method of passband data transmission. The idea is to transmit a sinusoidal signal whose frequency varies according to the transmitted data. A typical example of such transmission is transmitting signals of the form
@@ -87,15 +102,15 @@ for i=1, 2, .., M (M is the set size) and where the frequencies (fi) vary by the
 
 
 ### Reproducing the Model
-Same as the others but with FSK modulation/demodulation blocks, set M=2, set the sample time of the Integer generator to 0.001 and make sure to set the sample frequency is set to 1/0.002 (FSK needs at least this to work).
+Same as the others but set the total frequency to 1 Hz. with FSK modulation/demodulation blocks, set M=2, set the samples per symbol to 10 and set the frequency separation to be 1 Hz. In the RC version all the extra steps are the same as the BPSK RC except that the receive delay is set 1 instead.
 
 ### Scatter Plot at Eb/No=10
 <img src="/figures/fsk_transmitted.png" alt="FSK Transmitted Constellation" width="400"/>
 <img src="/figures/fsk_received.png" alt="FSK Received Constellation" width="400" />
+<img src="/figures/fsk_rc_transmitted.png" alt="FSK Transmitted Constellation" width="400"/>
+<img src="/figures/fsk_rc_received.png" alt="FSK Received Constellation" width="400" />
 
 
 ### BER vs Eb/No performance figure 
 <img src="/figures/fsk_performance.jpg" alt="FSK Performance" />
-
-## Raised Cosine
-To-do.
+<img src="/figures/fsk_rc_performance.jpg" alt="FSK Performance" />
