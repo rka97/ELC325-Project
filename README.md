@@ -25,7 +25,7 @@ The transmitted/received signals are plotted on the Quadrature-Amplitude and pha
 
 <img src="/figures/bpsk_transmitted.png" alt="BPSK Transmitted Constellation" width="400"/>
 <img src="/figures/bpsk_received.png" alt="BPSK Received Constellation" width="400" />
-#### RC Scatter Plots
+### RC Scatter Plots
 <img src="/figures/bpsk_rc_transmitted.png" alt="BPSK Transmitted Constellation" width="400"/>
 <img src="/figures/bpsk_rc_received.png" alt="BPSK Received Constellation" width="400" />
 
@@ -53,7 +53,7 @@ Same as BPSK but use QPSK modulation/demodulation blocks and set the integers to
 ### Scatter Plot at Eb/No=10
 <img src="/figures/qpsk_transmitted.png" alt="QPSK Transmitted Constellation" width="400"/>
 <img src="/figures/qpsk_received.png" alt="QPSK Received Constellation" width="400" />
-#### RC Scatter Plots
+### RC Scatter Plots
 <img src="/figures/qpsk_rc_transmitted.png" alt="QPSK Transmitted Constellation" width="400"/>
 <img src="/figures/qpsk_rc_received.png" alt="QPSK Received Constellation" width="400" />
 
@@ -81,7 +81,7 @@ The QAM16 scheme is shown first, followed by the QAM64.
 <img src="/figures/qam64_transmitted.png" alt="QAM64 Transmitted Constellation" width="400"/>
 <img src="/figures/qam64_received.png" alt="QAM64 Received Constellation" width="400" />
 
-#### RC Scatter Plots
+### RC Scatter Plots
 <img src="/figures/qam16_rc_transmitted.png" alt="QAM16 Transmitted Constellation" width="400"/>
 <img src="/figures/qam16_rc_received.png" alt="QAM16 Received Constellation" width="400" />
 
@@ -111,7 +111,7 @@ Same as the others but set the total frequency to 1 Hz. with FSK modulation/demo
 ### Scatter Plot at Eb/No=10
 <img src="/figures/fsk_transmitted.png" alt="FSK Transmitted Constellation" width="400"/>
 <img src="/figures/fsk_received.png" alt="FSK Received Constellation" width="400" />
-#### RC Scatter Plots
+### RC Scatter Plots
 <img src="/figures/fsk_rc_transmitted.png" alt="FSK Transmitted Constellation" width="400"/>
 <img src="/figures/fsk_rc_received.png" alt="FSK Received Constellation" width="400" />
 
