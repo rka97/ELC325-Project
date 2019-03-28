@@ -1,5 +1,5 @@
 clear;
-names_print = ["bpsk rc", "fsk rc", "qam16 rc", "qam64 raw", "qpsk rc"];
+names_print = ["bpsk rc", "fsk rc", "qam16 rc", "qam64 rc", "qpsk rc"];
 names = ["bpsk_rc", "fsk_rc", "qam16_rc", "qam64_rc", "qpsk_rc"];
 for j=1:length(names)
     name = names(j);
