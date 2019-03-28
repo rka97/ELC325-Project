@@ -2,7 +2,7 @@
 Digital Communications Matlab Simulink Project
 
 ## Instructions for Reproducing Figures
-This code requires MATLAB, Simulink, and the Digital Communication Toolbox to run. Open MATLAB, then open Main.prj as a Simulink project and run gen_plots.m: this will generate all of the BER performance figures here. The script runs each of the simulink files for the differnet modulation schemes and records the results. It'll also show the scatter plots required, which can be saved Using MATLAB's Save As Figure.
+This code requires MATLAB, Simulink, and the Digital Communication Toolbox to run. Open MATLAB, then open Main.prj as a Simulink project and run gen_plots.m: this will generate the BER figures for the base models, then run gen_plots_rc.m: this will generate the BER figures for the RC models. The scripts run each of the simulink files for the differnet modulation schemes and records the results. They also also show the scatter plots required, which can be saved using MATLAB's Save As Figure.
 
 ## BPSK Scheme
 ### Description
